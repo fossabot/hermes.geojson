@@ -16,11 +16,16 @@ namespace Hermes.GeoJson.Module.Services
         /// </summary>
         /// <returns>The feature.</returns>
         /// <param name="segment">Segment.</param>
-        public static Feature ToFeature(this IRouteSegment segment){
-
-            var geopositions = segment.Points.Select(x=> new GeographicPosition(x.Position.Lat, x.Position.Lon, x.Position.Ele));
+        public static Feature ToFeature(this IRouteSegment segment)
+        {
+            var geopositions = segment.Points.Select(x => new GeographicPosition(x.Position.Lat, x.Position.Lon, x.Position.Ele));
+            var speedList = segment.Points.Select(x => new {x.Speed,x.Time}).ToList();
+            var properties = new Dictionary<string, object>
+            {
+                { "speed", speedList }
+            };
             var lineString = new LineString(geopositions);
-            return new Feature(lineString);
+            return new Feature(lineString,properties);
         }
 
         /// <summary>

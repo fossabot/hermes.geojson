@@ -5,6 +5,10 @@ using Xunit;
 
 namespace Hermes.GeoJson.Testes
 {
+    /// <summary>
+    /// Gpx file parser unit test.
+    /// covert gpx file to feature collection 
+    /// </summary>
     public class GpxFileParserUnitTest
     {
         [Fact]
