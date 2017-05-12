@@ -1,14 +1,11 @@
-﻿namespace Hermes.GeoJson.Module.Model
+﻿namespace Hermes.GeoJson.Module
 {
-    /// <summary>
-    /// Defines the <see cref=GPosition />
-    /// </summary>
-    public class GPosition : IGPosition
+    public interface IPointLatLng
     {
         /// <summary>
-        /// Gets or sets the Ele
+        /// Gets or sets a value indicating whether IsZero
         /// </summary>
-        public double Ele
+        bool IsZero
         {
             get;
             set;
@@ -17,16 +14,16 @@
         /// <summary>
         /// Gets or sets the Lat
         /// </summary>
-        public double Lat
+        double Lat
         {
             get;
             set;
         }
 
         /// <summary>
-        /// Gets or sets the Lon
+        /// Gets or sets the Lng
         /// </summary>
-        public double Lon
+        double Lng
         {
             get;
             set;

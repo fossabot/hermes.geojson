@@ -7,40 +7,10 @@ using Hermes.GeoJson.Module.Model;
 
 namespace Hermes.GeoJson.Module
 {
-
     /// <summary>
-    /// Routes dictionary base.
+    /// Методы рсширения для конвертера маршрутов автотраспорта в формате gpx
     /// </summary>
-    public abstract class TrackContextBase : Dictionary<DateTime, List<List<IRoutePoint>>>
-	{
-
-	}
-    /// <summary>
-    /// Track context.
-    /// </summary>
-    public sealed class TrackContext:TrackContextBase{
-        
-    }
-
-	/// <summary>
-	/// Обработанные данные по сегментам маршрутов
-	/// </summary>
-	public sealed class Segments : Dictionary<int, IEnumerable<IRoutePoint>>
-	{
-
-	}
-
-	/// <summary>
-	/// Исходные данные сегментов маршрутов (неотсортированные в сыром виде)"
-	/// </summary>
-	public sealed class SegmentSource : Dictionary<int, IEnumerable<XElement>>
-	{
-
-	}
-	/// <summary>
-	/// Методы рсширения для конвертера маршрутов автотраспорта в формате gpx
-	/// </summary>
-	public static class GpxFileDataConverter
+    public static partial class RouteExtention
 	{
 		/// <summary>
 		/// Радиус Земли
@@ -488,7 +458,7 @@ namespace Hermes.GeoJson.Module
 		}
 
 		/// <summary>
-		/// Получение заголовочных данных по маршруту за день на основании данных сегмента
+		/// Получение заголовочных данных по маршруту 
 		/// </summary>
 		/// <returns>The route header.</returns>
 		public static IRouteElementHeader ToRouteHeader(this IEnumerable<IRouteSegment> segments)

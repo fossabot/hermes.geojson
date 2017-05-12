@@ -1,25 +1,40 @@
-﻿using System;
-namespace Hermes.GeoJson.Module.Model
+﻿namespace Hermes.GeoJson.Module.Model
 {
+    using System;
+
     /// <summary>
     /// Route point.
     /// </summary>
-    public class RoutePoint:IRoutePoint
+    public class RoutePoint : IRoutePoint
     {
         /// <summary>
         /// Gets or sets the position.
         /// </summary>
         /// <value>The position.</value>
-        public IGPosition Position { get; set; }
+        public IGPosition Position
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Gets or sets the speed.
         /// </summary>
         /// <value>The speed.</value>
-        public double Speed { get; set; }
+        public double Speed
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Gets or sets the time.
         /// </summary>
         /// <value>The time.</value>
-        public DateTime Time { get; set; }
+        public DateTime Time
+        {
+            get;
+            set;
+        }
     }
 }

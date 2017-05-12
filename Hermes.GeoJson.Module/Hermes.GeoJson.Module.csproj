@@ -1,13 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GeoJson.NetStandart\GeoJson.Net.csproj" />
   </ItemGroup>
